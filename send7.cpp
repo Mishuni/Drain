@@ -25,6 +25,9 @@ int main ()
       else if(mes=='S'){
         printf("Starting the cleaning\n");
       }
+      else if(mes=='W'){
+        printf("warning\n");
+      }
       fflush (stdout) ;
     }
     }
