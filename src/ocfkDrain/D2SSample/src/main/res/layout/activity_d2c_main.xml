@@ -1,0 +1,209 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="10"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".D2SActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1.5"
+        android:padding="5dp"
+        android:layout_height="0dp"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:background="@drawable/view_border"
+            android:layout_weight="0.8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:onClick="GOResetToRFOTMButton"
+                android:background="@drawable/view_border"
+
+                android:text="Reset(RFOTM)"
+                android:textColor="#082CF3"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/view_border"
+            android:layout_weight="2.2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:background="@drawable/view_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/toggleButton"
+                android:layout_centerHorizontal="true"
+                android:textColor="#082CF3"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textOn="START(Server)"
+                android:textOff="STOP(Server)" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="8.5"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/control_view_border"
+            android:layout_weight="0.8"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:id="@+id/btn_normalpower"
+                    android:padding="38dp"
+                    android:clickable="true"
+                    android:background="@drawable/circle_bt_normalpower" />
+
+                <TextView
+                    android:id="@+id/btn_power_txt"
+                    android:layout_gravity="center"
+                    android:textColor="#0F0E0E"
+                    android:text="ON"
+                    android:textSize="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_weight="2.2"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:weightSum="5"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:weightSum="4"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:onClick="mAccountMgrClick"
+                    android:id="@+id/btn_setip"
+                    android:background="@drawable/d2s_button_border"
+                    android:text="SET IP"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+
+                <Button
+                    android:onClick="mAccountMgrClick"
+                    android:id="@+id/btn_signup"
+                    android:background="@drawable/d2s_button_border"
+                    android:text="SIGN UP"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+
+                <Button
+                    android:onClick="mAccountMgrClick"
+                    android:id="@+id/btn_signin"
+                    android:background="@drawable/d2s_button_border"
+                    android:text="SIGN IN"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:onClick="mAccountMgrClick"
+                    android:id="@+id/btn_signout"
+                    android:background="@drawable/d2s_button_border"
+                    android:text="SIGN OUT"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/log_view_border"
+                android:layout_width="match_parent"
+                android:layout_weight="4"
+
+                android:layout_height="0dp">
+
+                <ScrollView
+                    android:layout_weight="1"
+                    android:layout_marginBottom="30dp"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:id="@+id/scrollView">
+                    <TextView
+                        android:layout_margin="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#0B0B0B"
+                        android:textSize="12sp"
+                        android:id="@+id/consoleTextView" />
+                </ScrollView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
