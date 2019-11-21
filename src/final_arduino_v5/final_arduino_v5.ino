@@ -10,6 +10,7 @@ Servo myservo;
 int pos = 0; 
 int A_1A = 6;
 int A_1B = 5;
+int angle = 110;
 // Instantiate the Serial2 class
 Uart Serial2(&sercom1, PIN_SERIAL2_RX, PIN_SERIAL2_TX, PAD_SERIAL2_RX, PAD_SERIAL2_TX);
 
@@ -20,6 +21,7 @@ void setup()
   pinMode(A_1A, OUTPUT);
   pinMode(A_1B, OUTPUT);
   myservo.attach(9);
+  myservo.write(angle);
 }
 
 void loop()
@@ -27,24 +29,24 @@ void loop()
   val = analogRead(analogPin);
   Serial.println(val);
   
-  if( val> 400 && val < 900 ){
-    Serial2.write('U');
+  if( val> 400 && val < 830 ){
+    //Serial2.write('N');
   }
-  else if (val >= 900)        // Check if incoming data is available
+  else if (val >= 830)        // Check if incoming data is available
   { if(count>=10){
         MotorOn();
         count = 0;
       }
       else{
         count++;
-        Serial2.write("W");
+        //Serial2.write("W");
       }
   }
   else{
-    Serial2.write("N");
+    //Serial2.write("N");
   }
   
-  delay (1000);
+  delay (2000);
   
 } 
                       
@@ -58,19 +60,30 @@ void MotorOn()    // Interrupt handler for SERCOM1
       delay(1000);
       stop();
       delay(2000);
+      Serial.println(" Moter ! ");
       for(int i = 10; i>=0; i--){
-        
-        for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+        delay(5); 
+        for (pos = angle; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
         // in steps of 1 degree
             myservo.write(pos);              // tell servo to go to position in variable 'pos'
             delay(5);                       // waits 15ms for the servo to reach the position
         }
-        
-        for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+        for (pos = 180; pos >= angle; pos -= 1) { // goes from 180 degrees to 0 degrees
+            myservo.write(pos);              // tell servo to go to position in variable 'pos'
+            delay(5);                       // waits 15ms for the servo to reach the position
+        }
+
+        for (pos = angle; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+            myservo.write(pos);              // tell servo to go to position in variable 'pos'
+            delay(5);                       // waits 15ms for the servo to reach the position
+        }
+        for (pos = 0; pos <= angle; pos += 1) { // goes from 0 degrees to 180 degrees
+        // in steps of 1 degree
             myservo.write(pos);              // tell servo to go to position in variable 'pos'
             delay(5);                       // waits 15ms for the servo to reach the position
         }
       }
+      myservo.write(angle);
       Serial2.write("E");
       Serial.println("----motor off----");
     

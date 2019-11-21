@@ -3,6 +3,7 @@
 #include <string.h>
 #include <wiringPi.h>
 #include <wiringSerial.h>
+#include <unistd.h>
 
 #define LED_R 12
 #define LED_G 13
@@ -40,10 +41,10 @@ int SensorDetect::Detect(void)
 	if(serialDataAvail (fd))
     {
       char mes = serialGetchar(fd);
+	  
       printf (" -> %c\n", mes) ; 
       if(mes=='E'){
         printf("Finish the cleaning\n");
-		fflush (stdout) ;
 		res = 0;
 		digitalWrite(LED_R, HIGH);
 		digitalWrite(LED_G, HIGH);
@@ -51,15 +52,14 @@ int SensorDetect::Detect(void)
       }
       else if(mes=='S'){
         printf("Start the cleaning\n");
-		fflush (stdout) ;
 		res = 1;
 		digitalWrite(LED_R, LOW);
 		digitalWrite(LED_G, LOW);
 		digitalWrite(LED_B, LOW);
+		//sleep(15);//15초 delay
       }
-      else if(mes=='W'){
+      /*else if(mes=='W'){
         printf("warning\n");
-		fflush (stdout) ;
 		res = 0;
 		digitalWrite(LED_R, HIGH);
 		digitalWrite(LED_G, HIGH);
@@ -73,7 +73,8 @@ int SensorDetect::Detect(void)
 			digitalWrite(LED_G, HIGH);
 			digitalWrite(LED_B, HIGH);
 		  }
-	  }   
+	  }*/
+	  fflush (stdout);   
     }
 
 	return res;
