@@ -4,6 +4,16 @@
 
 ---
 
+## *구성원 & 깃헙 주소*
+
+유미선 : [@Mishuni](https://github.com/Mishuni)
+
+김민경 : [@minky506](https://github.com/minky506)
+
+이유림 : [@Esther Lee](https://github.com/14youlim)
+
+---
+
 ## 설계도 (Architecture)
 
 <p align="center">
