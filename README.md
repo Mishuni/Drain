@@ -6,15 +6,7 @@
 
 ## 설계도 (Architecture)
 
-<img src="./images/architecture.png" alt="architecture" style="zoom:48%;" />
-
-
-
-
-
-<img src="./images/킹덤.jpg" alt="kingdom" width="50%" height="50%"/>
-
-
+<img src="./images/architecture.png" alt="architecture" width="80%" height="80%" />
 
 
 
