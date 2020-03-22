@@ -6,7 +6,7 @@
 
 ## 설계도 (Architecture)
 
-![architecture](./images/architecture.png){: width="50" height:"50"}
+<img src="./images/architecture.png" alt="architecture" style="zoom:48%;" />
 
 
 
