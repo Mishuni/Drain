@@ -6,7 +6,9 @@
 
 ## 설계도 (Architecture)
 
-![ttt](./images/architecture.png)
+![architecture](./images/architecture.png){: width="50" height:"50"}
+
+
 
 ## 코드
 
