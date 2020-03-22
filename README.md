@@ -6,7 +6,9 @@
 
 ## 설계도 (Architecture)
 
-<img src="./images/architecture.png" alt="architecture" width="60%" height="60%" />
+<p align="center">
+	<img src="./images/architecture.png" alt="architecture" width="70%" height="70%" />
+</p>
 
 
 
