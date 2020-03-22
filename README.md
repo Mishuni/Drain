@@ -12,7 +12,7 @@
 
 
 
-<img src="./images/킹덤.jpg" alt="kingdom" style="zoom:50%;" />
+<img src="./images/킹덤.jpg" alt="kingdom" width="50%" height="50%"/>
 
 
 
